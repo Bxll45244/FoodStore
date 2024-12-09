@@ -15,10 +15,10 @@ $query = mysqli_query($conn, "INSERT INTO products (product_name,price,profile_i
 if($query) {
     move_uploaded_file($image_tmp, $image_location);
 
-    $_SESSION['message'] = 'Product Save Success';
+    $_SESSION['message'] = 'Product added successfully!';
     header('location: ' . $base_url . '/index.php');
 
 } else {
-    $_SESSION['message'] = 'Product Could Not Be Saved!';
+    $_SESSION['message'] = 'Unable to add product!';
     header('location: ' . $base_url . '/index.php');
 }
